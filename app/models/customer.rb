@@ -11,4 +11,7 @@ class Customer < ActiveRecord::Base
   validates :email,
     presence: true, format: { with: VALID_EMAIL_REGEX }, uniqueness: true
 belongs_to :company
+  validates :company_id, presence: true
+ belongs_to :post
+  validates :post_id, presence: true
 end
