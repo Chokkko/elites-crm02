@@ -1,6 +1,5 @@
 class CustomersController < ApplicationController
-  before_action :set_customer, only: [:show, :edit, :update, :destroy]
-  def index
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
     # @customers = Customer.page(params[:id])
     @q = Customer.search(params[:q])
     @customers = @q.result.page(params[:page])
@@ -55,4 +54,3 @@ class CustomersController < ApplicationController
   def set_customer
     @customer = Customer.find(params[:id])
   end
-end
