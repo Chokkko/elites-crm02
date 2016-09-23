@@ -29,6 +29,18 @@
              <%= f.search_field :email_cont, class: "form-control input-sm" %>
            </div>
          </div>
+         <div class="col-sm-3 col-xs-12">
+           <div class="form-group">
+             <%= f.label :company_name_cont, '会社名' %>
+             <%= f.search_field :company_name_cont, class: "form-control input-sm" %>
+           </div>
+         </div>
+         <div class="col-sm-3 col-xs-12">
+           <div class="form-group">
+             <%= f.label :post_position_name_cont, "役職" %>
+             <%= f.search_field :post_position_name_cont, class: "form-control input-sm" %>
+           </div>
+         </div>
        </div>
        <div class="row">
          <div class="col-xs-12 text-center">
@@ -40,11 +52,11 @@
       <hr />
       <table class="table table-striped">
         <thead>
-          <th>性</th>
-          <th>名</th>
-          <th>電子メール</th>
-          <th>所属会社</th>
-          <th>役職</th>
+          <th><%= sort_link(@q, :family_name, "性" %></th>
+          <th><%= sort_link(@q, :given_name, "名" %></th>
+          <th><%= sort_link(@q, :email, "電子メール" %></th>
+          <th><%= sort_link(@q, :company_name, "会社名" %></th>
+          <th><%= sort_link(@q, :post_position_name, "役職" %></th>
           <th>リンク</th>
         </thead>
         <tbody>
@@ -62,5 +74,4 @@
       </table>
       <%= paginate @customers %>
     </div>
-
   </div>
