@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
-
+gem 'kaminari', '~> 0.17.0'
+gem 'ransack'
+gem 'devise'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
@@ -31,11 +33,14 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
+  gem 'faker'              # 本物っぽいテストデータの作成
+  gem 'faker-japanese'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
 end
 
 group :development do
+  gem 'rails-erd'
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console'
   gem 'listen', '~> 3.0.5'
